@@ -67,8 +67,6 @@ alias runrob="rob;cd code;python drive_rover.py"
 plugins=(autojump osx git)
 
 source $ZSH/oh-my-zsh.sh
-source ~/.bashrc
-source ~/.bash_profile
 
 # User configuration
 
