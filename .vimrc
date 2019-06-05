@@ -3,6 +3,8 @@
 " ================================ System settings ====================================
 "
 set nocompatible
+set foldmethod=syntax
+set nofoldenable
 syntax on
 " set nowrap
 filetype plugin indent on

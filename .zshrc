@@ -15,15 +15,15 @@ ZSH_THEME="agnoster-tb"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 alias x='exit'
 alias o='open .'
-alias hhh="cd ~H5UI;gulp sync --host 172.30.57.28 --theme light"
+alias hhh="cd ~H5UI;gulp sync --host 172.30.58.27 --theme light"
 alias ddd="git branch | grep -v release | grep -v \* | grep -v Dev_ | xargs git branch -D"
-alias ss="ssh root@172.30.57.28"
-alias slog="~fe;svn up;svn log -l 1 -v"
-alias cleanbuild="~FortiSIEM;git pull;cd phoenix/src/java;mvn clean install -c;deploy"
-alias rrr="cd ~H5UI;git checkout releases/FCS5_2_0;git pull;git rebase"
+alias ss="ssh root@172.30.58.27"
+alias cpear="scp ~FortiSIEM/phoenix/src/java/phoenix-ear/target/phoenix-mgmt-1.0.ear root@172.30.58.27:/opt/phoenix/deployment"
+alias cpear2='cpear2(){scp ~FortiSIEM/phoenix/src/java/phoenix-ear/target/phoenix-mgmt-1.0.ear root@$1:/opt/phoenix/deployment};cpear2'
+alias cleanbuild="~FortiSIEM;git pull;cd phoenix/src/java;mvn clean install;cpear"
+alias rrr="cd ~H5UI;git checkout releases/FCS5_2_5;git pull;git rebase"
 alias ccc="git branch | grep -v releases | grep -v Dev | xargs git branch -D"
 alias co='f(){rrr;git checkout -b $1};f'
-alias review="~H5UI;git review -R releases/FCS5_1_0"
 
 # Robotics practice.
 hash -d rob=$HOME"/Documents/Learning/Material/Robotics"
