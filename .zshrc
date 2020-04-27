@@ -15,15 +15,18 @@ ZSH_THEME="agnoster-tb"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 alias x='exit'
 alias o='open .'
-alias hhh="cd ~H5UI;gulp sync --host 172.30.58.27 --theme light"
+alias hhh="cd ~H5UI;npx gulp sync --host 172.30.58.27"
 alias ddd="git branch | grep -v release | grep -v \* | grep -v Dev_ | xargs git branch -D"
+alias ddall="git branch | grep -v \* | xargs git branch -D"
 alias ss="ssh root@172.30.58.27"
 alias cpear="scp ~FortiSIEM/phoenix/src/java/phoenix-ear/target/phoenix-mgmt-1.0.ear root@172.30.58.27:/opt/phoenix/deployment"
 alias cpear2='cpear2(){scp ~FortiSIEM/phoenix/src/java/phoenix-ear/target/phoenix-mgmt-1.0.ear root@$1:/opt/phoenix/deployment};cpear2'
 alias cleanbuild="~FortiSIEM;git pull;cd phoenix/src/java;mvn clean install;cpear"
-alias rrr="cd ~H5UI;git checkout releases/FCS5_2_5;git pull;git rebase"
+alias rrr="cd ~H5UI;git checkout releases/FCS5_3_0;git pull;git rebase"
 alias ccc="git branch | grep -v releases | grep -v Dev | xargs git branch -D"
 alias co='f(){rrr;git checkout -b $1};f'
+alias tt='f(){cd ~FortiSIEM/phoenix;./src/cpp/scripts/text.py -c $1;./src/cpp/scripts/text.py -b;};f'
+alias cof='f(){cd ~H5UI;git checkout releases/FCS$1;git pull;git rebase;ccc;git checkout -b $2};f'
 
 # Robotics practice.
 hash -d rob=$HOME"/Documents/Learning/Material/Robotics"
@@ -73,7 +76,7 @@ source $ZSH/oh-my-zsh.sh
 export PATH=$HOME/bin:/usr/local/bin:$PATH
 export LANG=en_US.UTF-8
 export LC_CTYPE=en_US.UTF-8
-export JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk1.8.0_102.jdk/Contents/Home
+export JAVA_HOME=/Library/Java/JavaVirtualMachines/adoptopenjdk-12.0.1.jdk/Contents/Home/
 export PATH=/Users/tangbin/Work/SDK/flutter/bin:$PATH
 export PATH="$PATH":"$HOME/.pub-cache/bin"
 export PATH="$PATH":"$HOME/.rbenv/versions/2.5.1/bin"

@@ -3,9 +3,8 @@
 " ================================ System settings ====================================
 "
 set nocompatible
-set foldmethod=syntax
-set nofoldenable
 syntax on
+set nofoldenable
 " set nowrap
 filetype plugin indent on
 
@@ -25,6 +24,7 @@ Plug 'plasticboy/vim-markdown'
 Plug 'ryanoasis/vim-devicons'
 Plug 'bagrat/vim-workspace'
 Plug 'tpope/vim-fugitive'
+Plug 'Yggdroot/LeaderF' " need ripgrep
 
 call plug#end()
 "
@@ -89,7 +89,7 @@ set history=100
 set autoread
 set incsearch
 set tags=tags
-set autochdir
+" set autochdir
 set list
 set listchars=tab:>-,trail:~,extends:>,precedes:<,eol:$
 set ruler
@@ -195,6 +195,7 @@ nnoremap <leader>tc :tabclose<cr>
 " Open new Tab with current tab path.
 nnoremap <leader>te :tabedit <C-r>=expand('%:p:h')<cr> 
 noremap <silent> <leader>z :close<cr>
+noremap <silent> <leader>w :bw<cr>
 noremap <silent> <leader>x :x<cr>
 noremap <silent> <leader>o :only<cr>
 "
@@ -222,7 +223,7 @@ noremap <leader>n :cn<cr>
 noremap <leader>p :cp<cr>
 "
 " Open .vimrc quickly to edit it!
-nnoremap <leader>ev :vsplit $MYVIMRC<CR>
+nnoremap <leader>ev :e $MYVIMRC<CR>
 nnoremap <leader>sv :source $MYVIMRC<CR>
 "
 " For quick edit.
@@ -231,6 +232,47 @@ inoremap jk <ESC>
 nnoremap <leader>> $
 nnoremap <leader>< ^
 nnoremap <leader>v ^v$
+
+"------------------------------ leaderf rg ---------------------------
+let g:Lf_RgConfig = [
+        \ "--max-columns=150",
+        \ "--type-add web:*.{html,css,js}*",
+        \ "--glob=!git/*",
+        \ "--hidden"
+    \ ]
+
+" search word under cursor, the pattern is treated as regex, and enter normal mode directly
+noremap <C-F> :<C-U><C-R>=printf("Leaderf! rg -e %s ", expand("<cword>"))<CR>
+
+" search word under cursor, the pattern is treated as regex,
+" append the result to previous search results.
+noremap <C-G> :<C-U><C-R>=printf("Leaderf! rg --append -e %s ", expand("<cword>"))<CR>
+
+" search word under cursor literally only in current buffer
+noremap <C-B> :<C-U><C-R>=printf("Leaderf! rg -F --current-buffer -e %s ", expand("<cword>"))<CR>
+
+" search word under cursor literally in all listed buffers
+noremap <C-D> :<C-U><C-R>=printf("Leaderf! rg -F --all-buffers -e %s ", expand("<cword>"))<CR>
+
+" search visually selected text literally, don't quit LeaderF after accepting an entry
+xnoremap gf :<C-U><C-R>=printf("Leaderf! rg -F --stayOpen -e %s ", leaderf#Rg#visual())<CR>
+
+" recall last search. If the result window is closed, reopen it.
+noremap go :<C-U>Leaderf! rg --recall<CR>
+
+
+" search word under cursor in *.h and *.cpp files.
+noremap <Leader>a :<C-U><C-R>=printf("Leaderf! rg -e %s -g *.h -g *.cpp", expand("<cword>"))<CR>
+" the same as above
+noremap <Leader>a :<C-U><C-R>=printf("Leaderf! rg -e %s -g *.{h,cpp}", expand("<cword>"))<CR>
+
+" search word under cursor in cpp and java files.
+noremap <Leader>b :<C-U><C-R>=printf("Leaderf! rg -e %s -t cpp -t java", expand("<cword>"))<CR>
+
+" search word under cursor in cpp files, exclude the *.hpp files
+noremap <Leader>c :<C-U><C-R>=printf("Leaderf! rg -e %s -t cpp -g !*.hpp", expand("<cword>"))<CR>
+
+"------------------------------ leaderf rg end ---------------------------
 "
 " ================================== Functions ==================================
 "
