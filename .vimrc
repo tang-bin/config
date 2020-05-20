@@ -138,7 +138,7 @@ let g:WebDevIconsOS = 'Darwin'
 "
 " ===================== terminal ====================
 "
-set shell=/usr/local/bin/zsh
+" set shell=/usr/local/bin/zsh
 noremap <silent><C-m><C-k> :terminal<CR>
 "
 " ------------------ Tagbar settings ------------------------
