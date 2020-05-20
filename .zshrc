@@ -80,6 +80,7 @@ export JAVA_HOME=/Library/Java/JavaVirtualMachines/adoptopenjdk-12.0.1.jdk/Conte
 export PATH=/Users/tangbin/Work/SDK/flutter/bin:$PATH
 export PATH="$PATH":"$HOME/.pub-cache/bin"
 export PATH="$PATH":"$HOME/.rbenv/versions/2.5.1/bin"
+export PATH="$PATH:$HOME/anaconda3/bin"
 
 # Preferred editor for local and remote sessions
 if [[ -n $SSH_CONNECTION ]]; then
