@@ -29,9 +29,7 @@ alias tt='f(){cd ~FortiSIEM/phoenix;./src/cpp/scripts/text.py -c $1;./src/cpp/sc
 alias cof='f(){cd ~H5UI;git checkout releases/FCS$1;git pull;git rebase;ccc;git checkout -b $2};f'
 
 # Robotics practice.
-hash -d rob=$HOME"/Documents/Learning/Material/Robotics"
-alias rob="cd ~rob/RoboND-Python-StarterKit;conda activate RoboND;cd ~rob/RoboND-Rover-Project"
-alias runrob="rob;cd code;python drive_rover.py"
+alias rr="~robo;source devel/setup.zsh"
 
 # Set to this to use case-sensitive completion
 # CASE_SENSITIVE="true"
@@ -70,17 +68,20 @@ alias runrob="rob;cd code;python drive_rover.py"
 plugins=(autojump osx git)
 
 source $ZSH/oh-my-zsh.sh
+source /opt/ros/noetic/setup.zsh
 
 # User configuration
 
-export PATH=$HOME/bin:/usr/local/bin:$PATH
+export PATH=$HOME/bin:/usr/bin:/usr/local/bin:$PATH
 export LANG=en_US.UTF-8
 export LC_CTYPE=en_US.UTF-8
 export JAVA_HOME=/Library/Java/JavaVirtualMachines/adoptopenjdk-12.0.1.jdk/Contents/Home/
 export PATH=/Users/tangbin/Work/SDK/flutter/bin:$PATH
 export PATH="$PATH":"$HOME/.pub-cache/bin"
 export PATH="$PATH":"$HOME/.rbenv/versions/2.5.1/bin"
-export PATH="$PATH:$HOME/anaconda3/bin"
+# export PATH="$PATH:$HOME/anaconda3/bin"
+export PATH="$PATH:/home/linuxbrew/.linuxbrew/bin"
+export GAZEBO_PLUGIN_PATH="$GAZEBO_PLUGIN_PATH:$HOME/Workspace/udacity-robo/new_prj_1/build"
 
 # Preferred editor for local and remote sessions
 if [[ -n $SSH_CONNECTION ]]; then
@@ -97,4 +98,10 @@ fi
 
 hash -d H5UI=$HOME"/Workspace/FortiSIEM/phoenix/src/java/phoenix-h5ui"
 hash -d FortiSIEM=$HOME"/Workspace/FortiSIEM"
-hash -d chart=$HOME"Workspace/FortiSIEM/phoenix/src/java/phoenix-charting"
+hash -d chart=$HOME"/Workspace/FortiSIEM/phoenix/src/java/phoenix-charting"
+hash -d robo=$HOME"/Workspace/udacity-robo/new_prj_2"
+
+export N_PREFIX="$HOME/n"; [[ :$PATH: == *":$N_PREFIX/bin:"* ]] || PATH+=":$N_PREFIX/bin"  # Added by n-install (see http://git.io/n-install-repo).
+
+# Created by `userpath` on 2020-05-29 15:59:44
+export PATH="$PATH:/home/tangbin/.local/bin"
