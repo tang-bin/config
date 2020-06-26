@@ -27,6 +27,7 @@ alias ccc="git branch | grep -v releases | grep -v Dev | xargs git branch -D"
 alias co='f(){rrr;git checkout -b $1};f'
 alias tt='f(){cd ~FortiSIEM/phoenix;./src/cpp/scripts/text.py -c $1;./src/cpp/scripts/text.py -b;};f'
 alias cof='f(){cd ~H5UI;git checkout releases/FCS$1;git pull;git rebase;ccc;git checkout -b $2};f'
+alias sd="source devel/setup.zsh"
 
 # Robotics practice.
 alias rr="~robo;source devel/setup.zsh"
@@ -82,6 +83,7 @@ export PATH="$PATH":"$HOME/.rbenv/versions/2.5.1/bin"
 # export PATH="$PATH:$HOME/anaconda3/bin"
 export PATH="$PATH:/home/linuxbrew/.linuxbrew/bin"
 export GAZEBO_PLUGIN_PATH="$GAZEBO_PLUGIN_PATH:$HOME/Workspace/udacity-robo/new_prj_1/build"
+export ROS_OS_OVERRIDE=ubuntu
 
 # Preferred editor for local and remote sessions
 if [[ -n $SSH_CONNECTION ]]; then
