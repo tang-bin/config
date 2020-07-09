@@ -229,8 +229,8 @@ nnoremap <leader>sv :source $MYVIMRC<CR>
 " For quick edit.
 nnoremap <leader>" viw<ESC>a"<ESC>hbi"<ESC>lel
 inoremap jk <ESC>
-inoremap ,. <ESC>$a
-inoremap ., <ESC>^i
+inoremap ,> <ESC>$a
+inoremap ,< <ESC>^i
 nnoremap <leader>> $
 nnoremap <leader>< ^
 nnoremap <leader>v ^v$
