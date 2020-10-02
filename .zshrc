@@ -69,7 +69,6 @@ alias rr="~robo;source devel/setup.zsh"
 plugins=(autojump osx git)
 
 source $ZSH/oh-my-zsh.sh
-source /opt/ros/noetic/setup.zsh
 
 # User configuration
 
@@ -82,6 +81,7 @@ export PATH="$PATH":"$HOME/.pub-cache/bin"
 export PATH="$PATH":"$HOME/.rbenv/versions/2.5.1/bin"
 # export PATH="$PATH:$HOME/anaconda3/bin"
 export PATH="$PATH:/home/linuxbrew/.linuxbrew/bin"
+export PATH="$PATH:$HOME/.cargo/bin"
 export GAZEBO_PLUGIN_PATH="$GAZEBO_PLUGIN_PATH:$HOME/Workspace/udacity-robo/new_prj_1/build"
 
 # Preferred editor for local and remote sessions
