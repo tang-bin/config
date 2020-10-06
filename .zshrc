@@ -73,6 +73,7 @@ source $ZSH/oh-my-zsh.sh
 # User configuration
 
 export PATH=$HOME/bin:/usr/bin:/usr/local/bin:$PATH
+export PATH="$PATH:/usr/local/sbin"
 export LANG=en_US.UTF-8
 export LC_CTYPE=en_US.UTF-8
 export JAVA_HOME=/Library/Java/JavaVirtualMachines/adoptopenjdk-12.0.1.jdk/Contents/Home/
