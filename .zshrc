@@ -15,11 +15,11 @@ ZSH_THEME="agnoster-tb"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 alias x='exit'
 alias o='open .'
-alias hhh="rm -rf /tmp/fortisiem_h5ui_lib;cd ~H5UI;npx gulp sync --host 172.30.58.27"
+alias hhh="rm -rf /tmp/fortisiem_h5ui_lib;cd ~H5UI;npx gulp sync --host 172.30.58.21"
 alias ddd="git branch | grep -v release | grep -v \* | grep -v Dev_ | xargs git branch -D"
 alias ddall="git branch | grep -v \* | xargs git branch -D"
-alias ss="ssh root@172.30.58.27"
-alias cpear="scp ~FortiSIEM/phoenix/src/java/phoenix-ear/target/phoenix-mgmt-1.0.ear root@172.30.58.27:/opt/phoenix/deployment"
+alias ss="ssh root@172.30.58.21"
+alias cpear="scp ~FortiSIEM/phoenix/src/java/phoenix-ear/target/phoenix-mgmt-1.0.ear root@172.30.58.21:/opt/phoenix/deployment"
 alias cpear2='cpear2(){scp ~FortiSIEM/phoenix/src/java/phoenix-ear/target/phoenix-mgmt-1.0.ear root@$1:/opt/phoenix/deployment};cpear2'
 alias cleanbuild="~FortiSIEM;git pull;cd phoenix/src/java;mvn clean install;cpear"
 alias rrr="cd ~H5UI;git checkout releases/FCS5_3_0;git pull;git rebase"
@@ -27,6 +27,7 @@ alias ccc="git branch | grep -v releases | grep -v Dev | xargs git branch -D"
 alias co='f(){rrr;git checkout -b $1};f'
 alias tt='f(){cd ~FortiSIEM/phoenix;./src/cpp/scripts/text.py -c $1;./src/cpp/scripts/text.py -b;};f'
 alias cof='f(){cd ~H5UI;git checkout releases/FCS$1;git pull;git rebase;ccc;git checkout -b $2};f'
+alias coff='f(){cd ~H5UI;git checkout $1;git pull;git rebase;ccc;git checkout -b $2};f'
 alias sd="source devel/setup.zsh"
 
 # Robotics practice.
@@ -107,3 +108,11 @@ export N_PREFIX="$HOME/n"; [[ :$PATH: == *":$N_PREFIX/bin:"* ]] || PATH+=":$N_PR
 
 # Created by `userpath` on 2020-05-29 15:59:44
 export PATH="$PATH:/home/tangbin/.local/bin"
+
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+
+# tabtab source for electron-forge package
+# uninstall by removing these lines or running `tabtab uninstall electron-forge`
+[[ -f /Users/btang/Workspace/electron-quick-start/node_modules/tabtab/.completions/electron-forge.zsh ]] && . /Users/btang/Workspace/electron-quick-start/node_modules/tabtab/.completions/electron-forge.zsh
