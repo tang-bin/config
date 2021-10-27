@@ -10,6 +10,9 @@ filetype plugin indent on
 
 "
 " ================================ vim-plugin ====================================
+" :PlugInstall
+" :PlugUpdate
+" :PlugUpgrade
 "
 call plug#begin('~/.vim/vim-plug')
 
