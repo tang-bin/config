@@ -15,6 +15,7 @@ ZSH_THEME="agnoster-tb"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 alias x='exit'
 alias o='open .'
+alias c='code'
 
 ###########################################
 ## Start FortiSIEM use
