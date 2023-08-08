@@ -133,6 +133,8 @@
 	<true/>
 	<key>HideScrollbar</key>
 	<false/>
+	<key>HideTab</key>
+	<true/>
 	<key>Hotkey</key>
 	<true/>
 	<key>HotkeyChar</key>
@@ -833,6 +835,8 @@
 	</dict>
 	<key>Print In Black And White</key>
 	<true/>
+	<key>SeparateStatusBarsPerPane</key>
+	<false/>
 	<key>SoundForEsc</key>
 	<false/>
 	<key>StatusBarPosition</key>

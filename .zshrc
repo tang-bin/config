@@ -24,7 +24,7 @@ alias lll="exa -abghHliS"
 
 export test_env=172.30.58.21
 export fsm_www_root=/tmp/fsm
-export fsm_test_root=/Users/btang/Workspace/FortiSIEM/phoenix/src/java/phoenix-h5ui/src/app/test/cases
+export fsm_test_root=/Users/btang/Workspace/FSM/workspace_1/phoenix/src/java/phoenix-h5ui/src/app/test/cases
 
 alias hhh="cd ~H5UI;HOST=$test_env npm run debug"
 
@@ -53,11 +53,16 @@ alias coff='f(){cd ~H5UI;git checkout $1;git pull;git rebase;ccc;git checkout -b
 alias cofc='f(){cd ~H5UI_CLEAN;git checkout releases/FCS$1;git pull;git rebase;ccc;git checkout -b $2};f'
 alias coffc='f(){cd ~H5UI_CLEAN;git checkout $1;git pull;git rebase;ccc;git checkout -b $2};f'
 
-hash -d H5UI=$HOME"/Workspace/FortiSIEM/phoenix/src/java/phoenix-h5ui"
-hash -d H5UI_CLEAN=$HOME"/Workspace/FSM_CLEAN/phoenix/src/java/phoenix-h5ui"
-hash -d FortiSIEM=$HOME"/Workspace/FortiSIEM"
-hash -d chart=$HOME"/Workspace/FortiSIEM/phoenix/src/java/phoenix-charting"
-hash -d robo=$HOME"/Workspace/udacity-robo/new_prj_2"
+alias mm="defaults write .GlobalPreferences com.apple.mouse.scaling -1"
+alias mmm="defaults write .GlobalPreferences com.apple.mouse.scaling 3"
+
+hash -d H5UI_1=$HOME"/Workspace/FSM/workspace_1/phoenix/src/java/phoenix-h5ui"
+hash -d H5UI_2=$HOME"/Workspace/FSM/workspace_2/phoenix/src/java/phoenix-h5ui"
+hash -d H5UI_3=$HOME"/Workspace/FSM/workspace_3/phoenix/src/java/phoenix-h5ui"
+hash -d H5UI_4=$HOME"/Workspace/FSM/workspace_4/phoenix/src/java/phoenix-h5ui"
+hash -d H5UI_5=$HOME"/Workspace/FSM/workspace_5/phoenix/src/java/phoenix-h5ui"
+hash -d FortiSIEM=$HOME"/Workspace/FSM/workspace_1"
+hash -d chart=$HOME"/Workspace/FSM/workspace_1/phoenix/src/java/phoenix-charting"
 
 ## END FortiSIEM use
 ############################################
